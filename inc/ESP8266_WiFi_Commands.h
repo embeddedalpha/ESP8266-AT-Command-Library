@@ -8,37 +8,39 @@
 #include "stdbool.h"
 #include "stdio.h"
 
+int ESP8266_Config_Wifi_Mode(int mode);
 
-int ESP8266_Set_WiFi(int mode);
+int ESP8266_Configure_AccessPoint(char *ssid, char *password);
 
-int * ESP8266_List_IPStations_Connected(void);
+char * ESP8266_List_AccessPoint(void);
 
-int ESP8266_Dynamic_Host_Configuration(int mode, int enable);
+int ESP8266_Disconnect_from_AccessPoint(void);
 
+int ESP8266_Configure_asSoftAP(char *ssid, char *password, int channel, int encryption);
 
-int * ESP8266_Connect2AccessPoint(char *ssid, char *password );
+char * ESP8266_ListofConnected_AccessPoint(void);
 
-int * ESP8266_List_All_AP(void);
+int ESP8266_Configure_DHCP(int mode, int enable);
 
-int ESP8266_Disconnect_AP(void);
+int ESP8266_Set_IP_Address_SoftAP(int enable, int lease_time, char *start_ip, char *end_ip);
 
-int ESP8266_SoftAP(char *ssid, char *password );
+int ESP8266_AutoConnect_AP(int enable);
 
-int ESP8266_SoftAP_Config();
+int ESP8266_Set_MACforStation(char *mac);
 
-int ESP8266_AutoConnect2AP(int enable);
+int ESP8266_Set_IPforStation(char *ip);
 
-int ESP8266_Set_MACofSoftAP(char *s);
+int ESP8266_Set_MACforSoftAP(char *mac);
 
-int ESP8266_Set_IPofSoftAP(char *s);
+int ESP8266_Set_IPforSoftAP(char *ip);
 
+int ESP8266_Enable_WPS();
 
-int ESP8266_Set_MACofStation(char *s);
+int ESP8266_Disable_WPS();
 
-int ESP8266_Set_IPofStation(char *s);
+int ESP8266_Configure_MDNS(int enable, char *hostname, char *server_name, int server_port);
 
-
-int ESP8266_Enable_WPS(void);
+int ESP8266_Configure_Station_Name(char *hostname);
 
 
 #endif
